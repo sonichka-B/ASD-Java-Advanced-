@@ -24,5 +24,13 @@ public class Animal {
                 ", age=" + age +
                 '}';
     }
+
+    public void feed() {
+        System.out.println(name +" is eating");
+    }
+
+    public void makeSound(){
+        System.out.println(name +" made sound");
+    }
 }
 
