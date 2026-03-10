@@ -23,20 +23,42 @@ public class Main {
 //            System.out.println(s);
 //        }
 
-        System.out.println("-- Task 2 --");
+//        System.out.println("-- Task 2 --");
+//
+//        Task2 task2 = new Task2();
+//        String s = task2.firstOrNull(List.of("A", "B", "C"));
+//        System.out.println(s);
+//        List<Integer> emptyList = List.of();
+//        Integer i = task2.firstOrNull(emptyList);
+//        System.out.println(i);
+//
+//        List<Integer> forSum = List.of(1, 2, 3);
+//        System.out.println(task2.sum(forSum));
+//
+//        List<Integer> results = new ArrayList<>(List.of(7, 5, 9));
+//        task2.addDefaultIds(results);
+//        System.out.println(results);
 
-        Task2 task2 = new Task2();
-        String s = task2.firstOrNull(List.of("A", "B", "C"));
-        System.out.println(s);
-        List<Integer> emptyList = List.of();
-        Integer i = task2.firstOrNull(emptyList);
-        System.out.println(i);
+        System.out.println("-- Task 3 --");
 
-        List<Integer> forSum = List.of(1, 2, 3);
-        System.out.println(task2.sum(forSum));
+        StudentRegistry registry = new StudentRegistry();
+        Student student1 = new Student("Anna", "1", "anna@email.com");
+        Student student2 = new Student("Bob", "2", "bob@email.com");
+        Student student3 = new Student("Charlie", "3", "bob@email.com");
 
-        List<Integer> results = new ArrayList<>(List.of(7, 5, 9));
-        task2.addDefaultIds(results);
-        System.out.println(results);
+        System.out.println(registry.addStudent(student1));
+        System.out.println(registry.addStudent(student2));
+        System.out.println(registry.addStudent(student3));
+        System.out.println(registry.countStudents());
+
+        registry.findById("1");
+        registry.findById("4");
+        System.out.println(registry.containsEmail("anna@email.com"));
+        System.out.println(registry.containsEmail("gffg"));
+        registry.removeById("3");
+        System.out.println(registry.countStudents());
+
+
+
     }
 }
