@@ -2,6 +2,8 @@ import org.junit.jupiter.api.Test;
 import topic8.practice.Student;
 import topic8.practice.StudentRegistry;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class StudentRegistryTest {
     @Test
     public void testRemoveById() {
@@ -22,6 +24,8 @@ public class StudentRegistryTest {
 
         Student foundStudent = registry.findById("1");
         Student notFoundStudent = registry.findById("2");
+        assertEquals(student1.getId(), foundStudent.getId());
+        assertEquals(null, notFoundStudent);
     }
 
         @Test
@@ -32,5 +36,7 @@ public class StudentRegistryTest {
 
             boolean containsEmail = registry.containsEmail("hgf");
             boolean notContainsEmail = registry.containsEmail("hgf1");
+            assertEquals(true, containsEmail);
+            assertEquals(false, notContainsEmail);
     }
 }

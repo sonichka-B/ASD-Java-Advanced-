@@ -45,5 +45,6 @@ public class StudentRegistry {
 
     public int countStudents(){
         System.out.println(students.size());
+        return students.size();
     }
 }
