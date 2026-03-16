@@ -1,10 +1,14 @@
 package topic8.homework;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Registry<String, Student> studentRegistry = new Registry<>();
         Registry<String, Course> courseRegistry = new Registry<>();
         EnrollmentService enrollmentService = new EnrollmentService();
+        NumberStats grades = new NumberStats();
 
         Student student1 = new Student("Anna", "1", "a@email", "CS101");
         Student student2 = new Student("Bob", "2", "b@email", "CS102");
@@ -29,6 +33,13 @@ public class Main {
 
         enrollmentService.enroll("3", "CS102");
         System.out.println(enrollmentService.studentsOf("CS102"));
+
+        List<Integer> resultGrade = new ArrayList<>(List.of(10,20,30,40));
+        System.out.println("sum:" + grades.sum(resultGrade));
+        grades.addDefaultGrades(resultGrade);
+        System.out.println("average:"+grades.average(resultGrade));
+
+
 
     }
 }
