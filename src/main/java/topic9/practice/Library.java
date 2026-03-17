@@ -17,7 +17,22 @@ public class Library {
         }
 
         public String bookLabel(){
-            return "Book:" +title+"Author:"+author+"Library:"+name;
+            return "Book:" +title+", Author:"+author+", Library:"+name;
         }
+
+        @Override
+        public String toString() {
+            return "Book{" +
+                    "title='" + title + '\'' +
+                    ", author='" + author + '\'' +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Library{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

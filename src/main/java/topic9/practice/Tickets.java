@@ -3,6 +3,14 @@ package topic9.practice;
 public class Tickets {
     private String base;
 
+    public Tickets(String base){
+        this.base = base;
+    }
+
+    public String getBase() {
+        return base;
+    }
+
     public String buildTicketId(String base){
         String prefix = "ticket-";
         class IdBuilder{
@@ -23,5 +31,10 @@ public class Tickets {
         };
     }
 
-
+    @Override
+    public String toString() {
+        return "Tickets{" +
+                "base='" + base + '\'' +
+                '}';
+    }
 }
