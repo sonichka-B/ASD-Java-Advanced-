@@ -33,10 +33,11 @@ public class TicketComparators {
                 return o1.getCreatedAt().compareTo(o2.getCreatedAt());
             }
         });
+        return tickets;
     }
 
     public List<Ticket> sortLam(List<Ticket>tickets){
         tickets.sort(Comparator.comparing(Ticket::getCreatedAt));
-
+        return tickets;
     }
 }
