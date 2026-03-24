@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -44,6 +45,23 @@ public class EventLab {
     Predicate<Event> eveningMeet = morningMeet.negate().and(workDay);
 
     public void findConflicts(List<Event> events){
+        DataTimeLab dataTimeLab = new DataTimeLab();
+        for (int i = 0; i < events.size();  i++){
+            Event event1 = events.get(i);
+            for(int j = i + 1; j < events.size(); j++){
+                Event event2 = events.get(j);
+
+                Instant s1 = dataTimeLab.ToInstant(event1);
+                Instant s2 = dataTimeLab.ToInstant(event2);
+
+                Instant e1 = event1.end().atZone(event1.getZone()).toInstant();
+                Instant e2 = event2.end().atZone(event2.getZone()).toInstant();
+
+                if(s1.isBefore(e2)&& s2.isBefore(e1)){
+                   System.out.println("conflict:" + event1.label() + ", "+ event2.label());
+                }
+            }
+        }
 
     }
 }
