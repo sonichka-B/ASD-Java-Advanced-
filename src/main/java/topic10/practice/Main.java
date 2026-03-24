@@ -24,14 +24,22 @@ public class Main {
         System.out.println(event1);
         System.out.println(event2);
 
-        List<Event> events = new ArrayList<>(List.of(event,event1,event2));
+        List<Event> events = new ArrayList<>(List.of(event2,event1,event));
 
         System.out.println("---Task2---");
         EventLab eventLab = new EventLab();
         System.out.println(eventLab.pick(events, eventLab.morningMeet));
         eventLab.findConflicts(events);
 
-
+        System.out.println("---Task3---");
+        LambdaRefactorLab lambdaRefactorLab = new LambdaRefactorLab();
+        System.out.println(events);
+        lambdaRefactorLab.sortAnonymous(events);
+        System.out.println(events);
+        lambdaRefactorLab.sortLambda(events);
+        System.out.println(events);
+        lambdaRefactorLab.sortMethodRef(events);
+        System.out.println(events);
 
         System.out.println("---Task4---");
         DataTimeLab dataTimeLab = new DataTimeLab();
