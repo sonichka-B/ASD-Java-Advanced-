@@ -1,0 +1,8 @@
+id,email,status,amountCents
+1,john.doe@email.com,NEW,15000
+2,jane.smith@email.com,PAID,25000
+
+bad_row_missing_data
+3,error@email.com,UNKNOWN_STATUS,500
+4,bob@email.com,FAILED,1200
+5,alice@email.com,PAID,34000

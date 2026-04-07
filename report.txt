@@ -1,0 +1,6 @@
+Payment Report
+invalidLines=3
+paidTotalCents=59000
+NEW=1
+PAID=2
+FAILED=1
